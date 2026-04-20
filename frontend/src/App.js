@@ -14,7 +14,7 @@ function App() {
 console.log("USER ID:", userId);
   if(!loggedIn){
     return (
-  <div style={{ padding: 20 }}>
+  <div className="auth-container">
     <h1>StudySync</h1>
     {showRegister ? (
       <> 
@@ -38,11 +38,11 @@ console.log("USER ID:", userId);
           <h1>StudySync</h1>
           <button onClick={() =>{
           console.log("CLICK LOGIN"); setLoggedIn(false)}}>Logout</button>
-
+        </div>
           <Quote />
           <div  className="card">
           <Tasks userId={userId} reload={reload} setReload={setReload} />
-        </div>
+        
         </div>
         </div>
 );

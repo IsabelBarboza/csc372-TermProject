@@ -28,7 +28,7 @@ export default function Login({ setLoggedIn,setUserId }) {
 };
 
   return (
-    <div style={{ padding: 20 }}>
+    <div >
       <h2>Login</h2>
 
       <input
@@ -43,7 +43,7 @@ export default function Login({ setLoggedIn,setUserId }) {
         value={pass}
         onChange={(e) => setPass(e.target.value)}
       />
-
+        
       <button onClick={handleLogin}>Login</button>
     </div>
   );
