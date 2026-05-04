@@ -9,9 +9,7 @@ const tasksRoutes = require("./routes/tasks");
 
 const app = express();
 
-app.use(cors({
-  origin: "https://studysync-o7gdjl5ar-isabelbarbozas-projects.vercel.app/"
-}));
+app.use(cors());
 app.use(express.json());
 
 app.get("/",(req,res)=>{
