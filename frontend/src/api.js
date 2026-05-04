@@ -1,1 +1,1 @@
-export const BASE_URL = "https://csc372-studysyncproject.onrender.com/";
+export const BASE_URL = "https://csc372-studysyncproject.onrender.com";
