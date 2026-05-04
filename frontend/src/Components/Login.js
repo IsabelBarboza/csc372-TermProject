@@ -6,6 +6,9 @@ export default function Login({ setLoggedIn,setUserId }) {
   const [pass, setPass] = useState("");
 
   const handleLogin = async() => {
+    
+
+
   try{
   const res = await fetch(`${BASE_URL}/login`,{
            method:"POST",
@@ -13,12 +16,22 @@ export default function Login({ setLoggedIn,setUserId }) {
            body: JSON.stringify({user,pass}),
        });
 
+       
+
     const data=await res.json();
+
+if (!res.ok) {
+  alert(data.error || "Login error");
+  return;
+}
     console.log("LOGIN RESPONSE:",data);
 
     if(res.ok){
         setUserId(data.userId);
         setLoggedIn(true);
+
+            localStorage.setItem("loggedIn", "true");
+            localStorage.setItem("userId", data.userId);
     }else{
         alert(data.error);
     }
